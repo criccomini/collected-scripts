@@ -1,8 +1,10 @@
+#!/usr/bin/env python
+
 import httplib
 import json
 import os
 
-with open('rendered/power_lifting_log.md') as f:
+with open('rendered/lifting_log.md') as f:
 	token = os.environ['COLLECTED_NOTES_API_TOKEN']
 	email = os.environ['COLLECTED_NOTES_API_EMAIL']
 	conn = httplib.HTTPSConnection("collectednotes.com")
