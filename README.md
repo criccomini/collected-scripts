@@ -42,6 +42,8 @@ See the `templates` directory for examples. The post ID is how the `upload_posts
 
 You can upload your rendered templates using the `upload_posts.py` script. This script uses the environment variables from the setup section to upload your posts to Collected Notes.
 
+I have written my own `build.sh`. This won't work for you out of the box, but you can use it as an example. My `build.sh` gathers some data, renders templates, and pushes markdown to Collected Notes.
+
 ## About
 
 You might notice some strange design decisions with these scripts. I have gone out of my way not to depend on anything outside packages. No virtual environment is required. No pip installs. Just simply Python and Bash scripts.
