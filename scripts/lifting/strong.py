@@ -96,7 +96,7 @@ def render_template_to_file(template_loc, output_loc, vars):
     o.write(t.substitute(vars))
 
 if __name__=='__main__':
-  if len(sys.argv) < 3:
+  if len(sys.argv) < 4:
     raise ValueError("Missing parameters for [template file] [render file] [strong.csv file location...]")
   
   rm_stats = []

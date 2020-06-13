@@ -29,7 +29,7 @@ def put_file(post_id, markdown):
   print 'post_id={}, URL={}, status={}, response={}'.format(post_id, url, response.status, response.reason)
 
 if __name__=='__main__':
-  if len(sys.argv) < 1:
+  if len(sys.argv) < 2:
     raise ValueError("Missing parameters for [render directory]")
   
   render_dir = sys.argv[1]
