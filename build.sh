@@ -26,5 +26,11 @@ $CWD/scripts/lifting/strong.py \
   $CWD/data/lifting/531.csv \
   $CWD/data/lifting/stacked.csv
 
+log "Rendering Good Reads"
+$CWD/scripts/render_goodreads.py \
+  $CWD/templates/book_list.5877.md \
+  $CWD/rendered/book_list.5877.md \
+  39364006
+
 log "Posting rendered files: $RENDERED_DIR"
 python $CWD/upload_posts.py $RENDERED_DIR | xargs bash -c 'log Posting: "$@"'

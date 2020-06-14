@@ -26,7 +26,7 @@ def put_file(post_id, markdown):
   url = '/sites/{}/notes/{}'.format(COLLECTED_NOTES_SITE_ID, post_id)
   conn.request("PUT", url, json.dumps(json_dict), headers)
   response = conn.getresponse()
-  print 'post_id={}, URL={}, status={}, response={}'.format(post_id, url, response.status, response.reason)
+  print('post_id={}, URL={}, status={}, response={}'.format(post_id, url, response.status, response.reason))
 
 if __name__=='__main__':
   if len(sys.argv) < 2:
