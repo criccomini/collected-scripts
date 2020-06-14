@@ -4,7 +4,8 @@ This repository contains a collection of scripts for [Collected Notes](http://co
 
 The scripts pull data from different data sources, and render markdown files. These files are then posted to Collected Notes. The repository currently integrates with:
 
-* [Strong](https://www.strong.app/) CSV files
+* [Strong](https://www.strong.app) CSV files
+* [Goodreads](https://www.goodreads.com)
 
 ## Setup
 
@@ -23,6 +24,10 @@ You can find your site ID by editing any post:
 ```
 https://collectednotes.com/sites/<site ID>/notes/<post ID>/edit
 ```
+
+### Goodreads
+
+You must set the `GOODREADS_KEY` environment variable to use `render_goodreads.py`. This variable must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one.
 
 ## Templates
 
