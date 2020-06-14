@@ -28,8 +28,8 @@ $CWD/scripts/lifting/strong.py \
 
 log "Rendering Good Reads"
 $CWD/scripts/render_goodreads.py \
-  $CWD/templates/book_list.5877.md \
-  $CWD/rendered/book_list.5877.md \
+  $CWD/templates/books.5877.md \
+  $CWD/rendered/books.5877.md \
   39364006
 
 log "Posting rendered files: $RENDERED_DIR"
