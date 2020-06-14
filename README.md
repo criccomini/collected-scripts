@@ -4,8 +4,10 @@ This repository contains a collection of scripts for [Collected Notes](http://co
 
 The scripts pull data from different data sources, and render markdown files. These files are then posted to Collected Notes. The repository currently integrates with:
 
-* [Strong](https://www.strong.app) CSV files
-* [Goodreads](https://www.goodreads.com)
+* [Strong](https://www.strong.app)  
+  I use this to track weight lifting data. I export Strong's CSV data from my phone using Airdrop.
+* [Goodreads](https://www.goodreads.com)  
+  I use Goodreads to track my reading. My Kindle automatically posts to Goodreads when I share it. A script in this repository pulls the reading data and generates a book list.
 
 ## Setup
 
