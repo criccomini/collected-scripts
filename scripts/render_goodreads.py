@@ -147,6 +147,7 @@ def render_md(books):
 
     lines.append('* [{}]({})  '.format(book['title'], book['link']))
     lines.append('  Started: {}; {}{}'.format(started_at, read_at, rating))
+    lines.append('')
 
   return '\n'.join(lines)
 
