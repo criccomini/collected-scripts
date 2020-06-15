@@ -27,9 +27,17 @@ You can find your site ID by editing any post:
 https://collectednotes.com/sites/<site ID>/notes/<post ID>/edit
 ```
 
-### Goodreads
+### Build
 
-You must set the `GOODREADS_KEY` environment variable to use `render_goodreads.py`. This variable must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one.
+The repository comes with a build.sh file. This is specific to my needs. You can write your own based off of it. My build. requires you to set these environment variables:
+
+```
+# Required for Goodreads
+GOODREADS_KEY=...
+GOODREADS_USER_ID=...
+```
+
+`GOODREADS_KEY` must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one. Click on your account details to find your Goodreads user ID; it's the number in the URL (https://www.goodreads.com/user/show/<your ID>-foo-bar-baz).
 
 ## Templates
 

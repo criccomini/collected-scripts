@@ -18,7 +18,7 @@ log "RENDERED_DIR = $RENDERED_DIR"
 log "Fetching $STRONG_FILE"
 [ -f STRONG_FILE ] && mv STRONG_FILE $CWD/data/strong.csv
 
-log "Rendering $STRONG_FILE"
+log "Rendering Strong"
 $CWD/scripts/lifting/strong.py \
   $CWD/templates/lifting_log.3543.md \
   $CWD/rendered/lifting_log.3543.md \
@@ -30,7 +30,7 @@ log "Rendering Good Reads"
 $CWD/scripts/render_goodreads.py \
   $CWD/templates/books.5877.md \
   $CWD/rendered/books.5877.md \
-  39364006
+  $GOODREADS_USER_ID
 
 log "Posting rendered files: $RENDERED_DIR"
 python $CWD/upload_posts.py $RENDERED_DIR | xargs bash -c 'log Posting: "$@"'
