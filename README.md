@@ -37,7 +37,7 @@ GOODREADS_KEY=...
 GOODREADS_USER_ID=...
 ```
 
-`GOODREADS_KEY` must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one. Click on your account details to find your Goodreads user ID; it's the number in the URL (https://www.goodreads.com/user/show/<your ID>-foo-bar-baz).
+`GOODREADS_KEY` must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one. Click on your account details to find your Goodreads user ID; it's the number in the URL (https://www.goodreads.com/user/show/&gt;your_id&lt;-foo-bar-baz).
 
 ## Templates
 
