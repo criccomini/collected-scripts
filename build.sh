@@ -15,6 +15,9 @@ log "STRONG_FILE = $STRONG_FILE"
 log "DATA_DIR = $DATA_DIR"
 log "RENDERED_DIR = $RENDERED_DIR"
 
+log "Making $RENDERED_DIR"
+mkdir -p $RENDERED_DIR
+
 log "Fetching $STRONG_FILE"
 [ -f STRONG_FILE ] && mv STRONG_FILE $CWD/data/strong.csv
 
