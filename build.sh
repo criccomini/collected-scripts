@@ -19,7 +19,7 @@ log "Fetching $STRONG_FILE"
 [ -f STRONG_FILE ] && mv STRONG_FILE $CWD/data/strong.csv
 
 log "Rendering Strong"
-$CWD/scripts/lifting/strong.py \
+$CWD/scripts/render_strong.py \
   $CWD/templates/lifting_log.3543.md \
   $CWD/rendered/lifting_log.3543.md \
   $CWD/data/lifting/strong.csv \
