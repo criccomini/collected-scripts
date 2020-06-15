@@ -11,7 +11,7 @@ The scripts pull data from different data sources, and render markdown files. Th
 
 ## Setup
 
-The scripts require a couple of variables to run. Set your Collected Notes email address and API token as environment variables:
+The scripts require a couple of variables to run. Set your Collected Notes email address, API token, and site ID as environment variables:
 
 ```
 export COLLECTED_NOTES_API_TOKEN=...
