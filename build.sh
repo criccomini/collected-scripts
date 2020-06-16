@@ -4,6 +4,8 @@ STRONG_FILE=~/Downloads/strong.csv
 DATA_DIR=$CWD/data
 RENDERED_DIR=$CWD/rendered
 
+OVERCAST_OPXML_FILE=$DATA_DIR/overcast.xml
+
 function log {
     echo "[$(date +'%F %T')]: $*"
 }
@@ -21,13 +23,16 @@ mkdir -p $RENDERED_DIR
 log "Fetching $STRONG_FILE"
 [ -f STRONG_FILE ] && mv STRONG_FILE $CWD/data/strong.csv
 
+log "Fetching $OVERCAST_OPXML_FILE"
+$CWD/scripts/fetch_overcast.py $OVERCAST_OPXML_FILE
+
 log "Rendering Strong"
 $CWD/scripts/render_strong.py \
   $CWD/templates/lifting_log.3543.md \
   $CWD/rendered/lifting_log.3543.md \
-  $CWD/data/lifting/strong.csv \
-  $CWD/data/lifting/531.csv \
-  $CWD/data/lifting/stacked.csv
+  $CWD/data/strong.csv \
+  $CWD/data/531.csv \
+  $CWD/data/stacked.csv
 
 log "Rendering Good Reads"
 $CWD/scripts/render_goodreads.py \
