@@ -34,11 +34,17 @@ $CWD/scripts/render_strong.py \
   $CWD/data/531.csv \
   $CWD/data/stacked.csv
 
-log "Rendering Good Reads"
+log "Rendering Goodreads"
 $CWD/scripts/render_goodreads.py \
   $CWD/templates/books.5877.md \
   $CWD/rendered/books.5877.md \
   $GOODREADS_USER_ID
+
+log "Rendering Podcasts"
+$CWD/scripts/render_opml_extended.py \
+  $CWD/templates/podcasts.6552.md \
+  $CWD/rendered/podcasts.6552.md \
+  $OVERCAST_OPXML_FILE
 
 log "Posting rendered files: $RENDERED_DIR"
 python $CWD/upload_posts.py $RENDERED_DIR | xargs bash -c 'log Posting: "$@"'
