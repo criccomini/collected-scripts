@@ -4,6 +4,7 @@ STRONG_FILE=~/Downloads/strong.csv
 DATA_DIR=$CWD/data
 RENDERED_DIR=$CWD/rendered
 
+GOODREADS_XML_FILE=$DATA_DIR/goodreads.xml
 OVERCAST_OPXML_FILE=$DATA_DIR/overcast.xml
 
 function log {
@@ -23,6 +24,9 @@ mkdir -p $RENDERED_DIR
 log "Fetching $STRONG_FILE"
 [ -f STRONG_FILE ] && mv STRONG_FILE $CWD/data/strong.csv
 
+log "Fetching $GOODREADS_XML_FILE"
+$CWD/scripts/fetch_goodreads.py $GOODREADS_XML_FILE $GOODREADS_USER_ID
+
 log "Fetching $OVERCAST_OPXML_FILE"
 $CWD/scripts/fetch_overcast.py $OVERCAST_OPXML_FILE
 
@@ -38,7 +42,7 @@ log "Rendering Goodreads"
 $CWD/scripts/render_goodreads.py \
   $CWD/templates/books.5877.md \
   $CWD/rendered/books.5877.md \
-  $GOODREADS_USER_ID
+  $GOODREADS_XML_FILE
 
 log "Rendering Podcasts"
 $CWD/scripts/render_opml_extended.py \
