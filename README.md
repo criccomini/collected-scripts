@@ -8,6 +8,8 @@ The scripts pull data from different data sources, and render markdown files. Th
   I use this to track weight lifting data. I export Strong's CSV data from my phone using Airdrop.
 * [Goodreads](https://www.goodreads.com)  
   I use Goodreads to track my reading. My Kindle automatically posts to Goodreads when I share it. A script in this repository pulls the reading data and generates a book list.
+* [Overcast](http://overcast.fm)  
+  I listen to podcasts on Overcast. I "star" podcasts that I listen to. There is a script in this repository that will pull all starred podcasts from Overcast and generates a podcast list.
 
 ## Setup
 
@@ -35,9 +37,15 @@ The repository comes with a build.sh file. This is specific to my needs. You can
 # Required for Goodreads
 GOODREADS_KEY=...
 GOODREADS_USER_ID=...
+
+# Required for Overcast.fm
+export OVERCAST_EMAIL=...
+export OVERCAST_PASSWORD=...
 ```
 
 `GOODREADS_KEY` must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one. Click on your account details to find your Goodreads user ID; it's the number in the URL (https://www.goodreads.com/user/show/(your_id)-foo-bar-baz).
+
+You need to set `OVERCAST_EMAIL` and `OVERCAST_PASSWORD` to post your Overcast podcasts. The script pulls all "starred" podcasts.
 
 ## Templates
 

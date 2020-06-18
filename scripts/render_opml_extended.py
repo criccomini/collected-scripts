@@ -36,7 +36,7 @@ def render_md(podcasts):
     return datetime.datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S").strftime('%b %d, %Y')
 
   for podcast in podcasts:
-    lines.append('* [{}]({}) ([{}]({}))  '.format(podcast['episode_title'], podcast['episode_url'], podcast['podcast_title'], podcast['podcast_url']))
+    lines.append('* [{}]({}): [{}]({})  '.format(podcast['podcast_title'], podcast['podcast_url'], podcast['episode_title'], podcast['episode_url']))
     lines.append('  {}'.format(format_date(podcast['episode_user_update_date'])))
     lines.append('')
 
