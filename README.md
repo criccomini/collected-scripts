@@ -10,6 +10,8 @@ The scripts pull data from different data sources, and render markdown files. Th
   I use Goodreads to track my reading. My Kindle automatically posts to Goodreads when I share it. A script in this repository pulls the reading data and generates a book list.
 * [Overcast](http://overcast.fm)  
   I listen to podcasts on Overcast. I "star" podcasts that I listen to. There is a script in this repository that will pull all starred podcasts from Overcast and generates a podcast list.
+* [Pocket](https://getpocket.com/)  
+  I use pocket to bookmark interesting links. The pocket script in this repository pull all archived links, and generates a "links" list.
 
 ## Setup
 
