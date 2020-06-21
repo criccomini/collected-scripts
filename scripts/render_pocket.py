@@ -41,7 +41,8 @@ def render_md(links):
 
     lines.append('* [{}]({})  '.format(title, url))
     lines.append('  {} &middot; {}  '.format(date, domain))
-    lines.append('  {}'.format(excerpt))
+    if excerpt and len(excerpt) > 0:
+      lines.append('  {}'.format(excerpt))
     lines.append('')
 
   return '\n'.join(lines)
