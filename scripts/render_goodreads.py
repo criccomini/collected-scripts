@@ -37,10 +37,10 @@ def render_md(books):
   for book in books:
     started_at = format_date(book['started_at']) if book['started_at'] else format_date(book['date_added'])
     read_at = 'Finished: {}'.format(format_date(book['read_at'])) if book['read_at'] else '**Currently Reading**'
-    rating = '; Rating: {}/5'.format(book['rating']) if book['rating'] else ''
+    rating = '&middot; Rating: {}/5'.format(book['rating']) if book['rating'] else ''
 
     lines.append('* [{}]({})  '.format(book['title'], book['link']))
-    lines.append('  Started: {}; {}{}'.format(started_at, read_at, rating))
+    lines.append('  Started: {} &middot; {}{}'.format(started_at, read_at, rating))
     lines.append('')
 
   return '\n'.join(lines)
@@ -52,7 +52,7 @@ def render_template_to_file(template_loc, output_loc, vars):
 
 if __name__=='__main__':
   if len(sys.argv) < 4:
-    raise ValueError("Missing parameters for [template file] [render file] [goodreads user id]")
+    raise ValueError("Missing parameters for [template file] [render file] [Goodreads XML file]")
 
   template_loc = sys.argv[1]
   render_loc = sys.argv[2]

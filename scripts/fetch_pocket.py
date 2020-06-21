@@ -4,10 +4,8 @@
 
 import json
 import os
-import re
 import sys
 import urllib
-import urllib2
 
 POCKET_CONSUMER_KEY = os.environ['POCKET_CONSUMER_KEY']
 POCKET_ACCESS_TOKEN = os.environ['POCKET_ACCESS_TOKEN']
@@ -19,6 +17,7 @@ def fetch(filename):
     'access_token': POCKET_ACCESS_TOKEN,
     'detailType': 'simple',
     'sort': 'newest',
+    'state': 'archive',
   })
   urllib.urlretrieve('https://getpocket.com/v3/get?{}'.format(data), filename)
 
