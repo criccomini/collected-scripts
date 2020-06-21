@@ -53,7 +53,7 @@ export POCKET_ACCESS_TOKEN=...
 
 You need to set `OVERCAST_EMAIL` and `OVERCAST_PASSWORD` to post your Overcast podcasts. The script pulls all "starred" podcasts.
 
-Pocket is requires both `POCKET_CONSUMER_KEY` and `POCKET_ACCESS_TOKEN`. [Create an application](https://getpocket.com/developer/apps/new) in pocket to get your consumer key. Next, use [OneClickPocket](http://reader.fxneumann.de/plugins/oneclickpocket/auth.php) to sign into your application via OAuth. This will give you the access token.
+Pocket is requires both `POCKET_CONSUMER_KEY` and `POCKET_ACCESS_TOKEN`. [Create an application](https://getpocket.com/developer/apps/new) in pocket to get your consumer key. Use [OneClickPocket](http://reader.fxneumann.de/plugins/oneclickpocket/auth.php) to sign into your application via OAuth. This will give you the access token.
 
 ## Templates
 
