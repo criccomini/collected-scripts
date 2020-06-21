@@ -61,4 +61,4 @@ $CWD/scripts/render_pocket.py \
   $POCKET_JSON_FILE
 
 log "Posting rendered files: $RENDERED_DIR"
-python $CWD/upload_posts.py $RENDERED_DIR | xargs bash -c 'log Posting: "$@"'
+python $CWD/scripts/upload_posts.py $RENDERED_DIR | xargs bash -c 'log Posting: "$@"'

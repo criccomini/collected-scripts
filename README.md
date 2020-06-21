@@ -77,4 +77,4 @@ I have written my own `build.sh`. This won't work for you out of the box, but yo
 
 ## About
 
-You might notice some strange design decisions with these scripts. I have gone out of my way not to depend on anything outside packages. No virtual environment is required. No pip installs. Just simply Python and Bash scripts.
+You might notice some strange design decisions with these scripts. I have gone out of my way not to depend on outside packages. No virtual environment is required. No pip installs. Just simply Python and Bash scripts.
