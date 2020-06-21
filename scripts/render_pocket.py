@@ -27,23 +27,21 @@ def render_md(links):
     return urlparse.urlparse(url).netloc
 
   for item_fields in links:
-    title = item_fields['resolved_title'].encode('ascii', errors='xmlcharrefreplace')
-    url = item_fields['resolved_url']
+    title = item_fields.get('resolved_title', item_fields['given_title']).encode('ascii', errors='xmlcharrefreplace')
+    url = item_fields.get('resolved_url', item_fields['given_url'])
     date = format_date(int(item_fields['time_added']))
     month = format_month(int(item_fields['time_added']))
     domain = format_domain(item_fields['resolved_url'])
     excerpt = item_fields['excerpt'].encode('ascii', errors='xmlcharrefreplace')
 
-    if not last_month_entry or last_month_entry != month:
-      last_month_entry = month
-      lines.append('## {}'.format(month))
-      lines.append('')
+    if len(title) > 0 and len(url):
+      if not last_month_entry or last_month_entry != month:
+        last_month_entry = month
+        lines.append('')
+        lines.append('## {}'.format(month))
+        lines.append('')
 
-    lines.append('* [{}]({})  '.format(title, url))
-    lines.append('  {} &middot; {}  '.format(date, domain))
-    if excerpt and len(excerpt) > 0:
-      lines.append('  {}'.format(excerpt))
-    lines.append('')
+      lines.append('* {} [{}]({})  '.format(date, title, url))
 
   return '\n'.join(lines)
 
