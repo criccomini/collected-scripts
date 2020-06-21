@@ -38,4 +38,4 @@ if __name__=='__main__':
   opml_file_loc = sys.argv[1]
 
   login()
-  fetch('https://overcast.fm/account/export_opml/extended', filename=opml_file_loc)
+  fetch('https://overcast.fm/account/export_opml/extended', opml_file_loc)

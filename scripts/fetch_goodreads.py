@@ -51,4 +51,4 @@ if __name__=='__main__':
   goodreads_xml_loc = sys.argv[1]
   user_id = sys.argv[2]
 
-  fetch_all(user_id, filename=goodreads_xml_loc)
+  fetch_all(user_id, goodreads_xml_loc)

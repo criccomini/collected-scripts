@@ -41,11 +41,17 @@ export GOODREADS_USER_ID=...
 # Required for Overcast.fm
 export OVERCAST_EMAIL=...
 export OVERCAST_PASSWORD=...
+
+## Required for Pocket
+export POCKET_CONSUMER_KEY=...
+export POCKET_ACCESS_TOKEN=...
 ```
 
 `GOODREADS_KEY` must be set to your Goodreads API key. Click [here](https://www.goodreads.com/api/keys) to get one. Click on your account details to find your Goodreads user ID; it's the number in the URL (https://www.goodreads.com/user/show/(your_id)-foo-bar-baz).
 
 You need to set `OVERCAST_EMAIL` and `OVERCAST_PASSWORD` to post your Overcast podcasts. The script pulls all "starred" podcasts.
+
+Pocket is requires both `POCKET_CONSUMER_KEY` and `POCKET_ACCESS_TOKEN`. [Create an application](https://getpocket.com/developer/apps/new) in pocket to get your consumer key. Next, use [OneClickPocket](http://reader.fxneumann.de/plugins/oneclickpocket/auth.php) to sign into your application via OAuth. This will give you the access token.
 
 ## Templates
 
