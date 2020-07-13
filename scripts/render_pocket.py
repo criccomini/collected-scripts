@@ -11,7 +11,7 @@ def get_links(filename):
   with open(filename) as i:
     parsed_json = json.load(i)
     links = parsed_json['list'].values()
-    return sorted(links, key=lambda l: int(l['time_added']), reverse=True)
+    return sorted(links, key=lambda l: int(l['time_read']), reverse=True)
 
 def render_md(links):
   lines = []
@@ -29,8 +29,8 @@ def render_md(links):
   for item_fields in links:
     title = item_fields.get('resolved_title', item_fields['given_title']).encode('ascii', errors='xmlcharrefreplace')
     url = item_fields.get('resolved_url', item_fields['given_url'])
-    date = format_date(int(item_fields['time_added']))
-    month = format_month(int(item_fields['time_added']))
+    date = format_date(int(item_fields['time_read']))
+    month = format_month(int(item_fields['time_read']))
     domain = format_domain(item_fields['resolved_url'])
     excerpt = item_fields['excerpt'].encode('ascii', errors='xmlcharrefreplace')
 
