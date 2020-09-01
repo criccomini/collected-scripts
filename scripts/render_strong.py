@@ -37,9 +37,11 @@ def get_rm_stats(strong_csv_loc):
         rm_stats.append({
           'date': date,
           'rm': rm,
-          'tested': 'Tested' if set_reps == 1 else 'Estimated ({}@{}lbs)'.format(set_reps, set_weight),
+          # Annoying hack for 5x5x5 since all single warmups look like tested RMs.
+          'tested': 'Tested' if set_reps == 1 and (int(rpe or 0) == 10 or workout != '5x5x5') else 'Estimated ({}@{}lbs)'.format(set_reps, set_weight),
           'program': workout,
-          'exercise': exercise
+          'exercise': exercise,
+          'rpe': None if rpe == '' else float(rpe),
         })
 
   return rm_stats
@@ -63,7 +65,7 @@ def filter_rm_stats(rm_stats):
       last_entry = filtered_rm_stats[-1] if filtered_rm_stats else None
 
       # This is a hack to check the first N characters of 'tested' to see if they match.
-      # Have to do this becuase "Estimated" containus rep and weight counts in its value.
+      # Have to do this becuase "Estimated" contains rep and weight counts in its value.
       same_test_type = last_entry['tested'][:5] == entry['tested'][:5] if last_entry else False
 
       # Only keep the largest entry per-date/test combination.
